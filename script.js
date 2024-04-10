@@ -36,8 +36,7 @@ contactForm.addEventListener('submit', function(e) {
     xhr.open('POST', 'send-email.php');
     xhr.onload = function() {
         if (xhr.status === 200) {
-            alert('Email sent successfully!');
-            contactForm.reset();
+            window.location.href = "thank-you.html";
         } else {
             alert('An error occurred. Please try again later.');
         }
@@ -45,87 +44,109 @@ contactForm.addEventListener('submit', function(e) {
     xhr.send(formData);
 });
 
-const canvas = document.getElementById('backgroundCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const lines = [];
-const maxLines = 50;
-const maxDistance = 200;
-
-class Line {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
-    }
-
-    update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x < 0 || this.x > canvas.width) {
-            this.speedX *= -1;
-        }
-
-        if (this.y < 0 || this.y > canvas.height) {
-            this.speedY *= -1;
-        }
-    }
-
-    draw() {
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y);
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i];
-            const distance = Math.sqrt(Math.pow(this.x - line.x, 2) + Math.pow(this.y - line.y, 2));
-            if (distance < maxDistance) {
-                ctx.lineTo(line.x, line.y);
+// tsParticles configuration
+particlesJS('particles-js', {
+    particles: {
+        number: {
+            value: 80,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: '#ffffff'
+        },
+        shape: {
+            type: 'circle',
+            stroke: {
+                width: 0,
+                color: '#000000'
+            },
+            polygon: {
+                nb_sides: 5
+            }
+        },
+        opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+            }
+        },
+        size: {
+            value: 3,
+            random: true,
+            anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+            }
+        },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#ffffff',
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 6,
+            direction: 'none',
+            random: false,
+            straight: false,
+            out_mode: 'out',
+            bounce: false,
+            attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
             }
         }
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-        ctx.stroke();
-    }
-}
-
-function init() {
-    for (let i = 0; i < maxLines; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        lines.push(new Line(x, y));
-    }
-}
-
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    lines.forEach(line => {
-        line.update();
-        line.draw();
-    });
-    requestAnimationFrame(animate);
-}
-
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-
-init();
-animate();
-
-canvas.addEventListener('mousemove', event => {
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-
-    const targetLine = lines.find(line => {
-        const distance = Math.sqrt(Math.pow(mouseX - line.x, 2) + Math.pow(mouseY - line.y, 2));
-        return distance < maxDistance;
-    });
-
-    if (targetLine) {
-        targetLine.x = mouseX;
-        targetLine.y = mouseY;
-    }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: {
+                enable: true,
+                mode: 'repulse'
+            },
+            onclick: {
+                enable: true,
+                mode: 'push'
+            },
+            resize: true
+        },
+        modes: {
+            grab: {
+                distance: 400,
+                line_linked: {
+                    opacity: 1
+                }
+            },
+            bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3
+            },
+            repulse: {
+                distance: 200,
+                duration: 0.4
+            },
+            push: {
+                particles_nb: 4
+            },
+            remove: {
+                particles_nb: 2
+            }
+        }
+    },
+    retina_detect: true
 });

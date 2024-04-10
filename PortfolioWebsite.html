@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanner Thurman's Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -22,8 +21,8 @@
     </header>
 
     <section id="about">
+        <div id="particles-js"></div>
         <div class="container">
-            <canvas id="backgroundCanvas"></canvas>
             <div class="intro-content">
                 <h1>Welcome to My Portfolio</h1>
                 <p>Hello! I'm Tanner Thurman, a current Computer Science student attending Western Kentucky University. Welcome to my online portfolio where you can find more about me and my work.</p>
@@ -47,11 +46,25 @@
                         <li>Easy retrieval and querying of student records</li>
                         <li>Efficient data management and organization</li>
                     </ul>
-                    <div class="project-links">
-                        <a href="student-database.zip" download>Download</a>
-                    </div>
                 </div>
             </div>
+            <div class="project-image">
+                <img src="images/WKU chatbot.png" alt="Western Kentucky University AGI Chatbot">
+            </div>
+            <div class="project-details">
+                <h3>Western Kentucky University AGI Chatbot</h3>
+                <p>The chatbot is a customizable course aid that assists professors and students in their everyday needs. Students can ask questions related to course work provided by the teacher.</p>
+                <p>Key features:</p>
+                <ul>
+                    <li>Answer course related questions for students</li>
+                    <li>Reduce emails sent to professors</li>
+                    <li>AGI able to assist in any questions or assignments it is asked</li>
+                </ul>
+                <div class="project-links">
+                    <a href="project-downloads/ClaudeProject.zip" download>Download</a>
+                </div>
+            </div>
+        </div>
             <!-- Add more project blocks here -->
         </div>
     </section>
@@ -60,23 +73,46 @@
         <div class="container">
             <h2>Skills</h2>
             <div class="skills-container">
-                <div class="skill-item">
-                    <img src="images/Java.png" alt="Java">
-                    <p>Java</p>
+                <div class="skill-row">
+                    <div class="skill-item">
+                        <img src="images/Java.png" alt="Java">
+                        <p>Java</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/Python.png" alt="Python">
+                        <p>Python</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/CSharp.png" alt="C#">
+                        <p>C#</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/Unity.png" alt="Unity">
+                        <p>Unity</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/HTML.svg" alt="HTML">
+                        <p>HTML</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="images/Python.png" alt="Python">
-                    <p>Python</p>
+                <div class="skill-row">
+                    <div class="skill-item">
+                        <img src="images/CSS.png" alt="CSS">
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/JavaScript.png" alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/MYSQL.png" alt="SQL">
+                        <p>SQL</p>
+                    </div>
+                    <div class="skill-item">
+                        <img src="images/Git.png" alt="Git">
+                        <p>Git</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="images/CSharp.png" alt="C#">
-                    <p>C#</p>
-                </div>
-                <div class="skill-item">
-                    <img src="images/Unity.png" alt="Unity">
-                    <p>Unity</p>
-                </div>
-                <!-- Add more skill items here -->
             </div>
         </div>
     </section>
@@ -128,7 +164,7 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <form id="contact-form">
+            <form id="contact-form" action="send-email.php" method="post">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -155,6 +191,7 @@
     <footer>
         <p>&copy; 2023 Tanner Thurman. All rights reserved.</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
