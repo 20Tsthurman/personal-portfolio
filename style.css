@@ -213,6 +213,7 @@ section {
 
 .timeline {
     position: relative;
+    padding: 40px 0;
 }
 
 .timeline::before {
@@ -228,7 +229,7 @@ section {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .timeline-icon {
@@ -248,10 +249,10 @@ section {
 
 .timeline-content {
     width: 45%;
-    padding: 20px;
+    padding: 30px;
     background-color: #f9f9f9;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -264,32 +265,27 @@ section {
     margin-right: 55%;
 }
 
-#contact {
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.social-icons {
-    margin-top: 20px;
-}
-
-.social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #333;
+.timeline-content h3 {
     font-size: 24px;
-    transition: color 0.3s;
+    margin-bottom: 5px;
 }
 
-.social-icons a:hover {
-    color: #ffcc00;
+.timeline-content .company,
+.timeline-content .institution {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 5px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+.timeline-content .duration {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.timeline-content .description {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
