@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanner Thurman's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header>
@@ -65,7 +67,7 @@
                 </div>
             </div>
         </div>
-            <!-- Add more project blocks here -->
+            <!-- more projects will go here as I complete them -->
         </div>
     </section>
 
@@ -129,7 +131,7 @@
                         <h3>Full Stack Developer</h3>
                         <p class="company">Knobull</p>
                         <p class="duration">12/23 - Present</p>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel malesuada sapien.</p>
+                        <p class="description">Wrote java code to develop a mini search engine. Ensured optimal functionality and scalability of the search engine's infrastructure. Was offered to be the team lead of the project</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -140,7 +142,7 @@
                         <h3>Pharmacy Technician</h3>
                         <p class="company">Kroger Pharmacy</p>
                         <p class="duration">05/20 - Present</p>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel malesuada sapien.</p>
+                        <p class="description">Processing patient insurance, developed good communication skills</p>
                     </div>
                 </div>
             </div>
@@ -159,7 +161,7 @@
                         <h3>Bachelor of Computer Science</h3>
                         <p class="institution">Western Kentucky University</p>
                         <p class="duration">05/22 - 12/24</p>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel malesuada sapien.</p>
+                        <p class="description"></p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -170,7 +172,7 @@
                         <h3>Associate of Business Administration</h3>
                         <p class="institution">Elizabethtown Community and Technical College</p>
                         <p class="duration">05/20 - 12/21</p>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel malesuada sapien.</p>
+                        <p class="description"></p>
                     </div>
                 </div>
             </div>
@@ -180,7 +182,8 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <form id="contact-form" action="send-email.php" method="post">
+            <p>Feel free to reach out for collaborations or just a chat.</p>
+            <form id="contact-form" action="send-email.php" method="post" class="contact-form">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -193,16 +196,18 @@
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                <button type="submit">Send</button>
+                <button type="submit" class="btn">Send</button>
             </form>
-            <p>Feel free to reach out for collaborations or just a chat.</p>
-            <p>tsthurman@gmail.com</p>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
+                <a href="https://www.linkedin.com/in/tanner-thurman/" target="_blank" aria-label="Visit my LinkedIn profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/20Tsthurman" target="_blank" aria-label="Visit my GitHub">
+                    <i class="fab fa-github"></i>
+                </a>                
+            </div>            
         </div>
-    </section>
+    </section>    
 
     <footer>
         <p>&copy; 2023 Tanner Thurman. All rights reserved.</p>

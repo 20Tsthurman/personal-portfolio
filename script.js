@@ -1,4 +1,4 @@
-// Add smooth scrolling to navigation links
+// smooth scrolling to navigation links
 document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -9,7 +9,7 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     });
 });
 
-// Add scroll reveal animation to sections
+// scroll reveal animation to sections
 const sections = document.querySelectorAll('section');
 const options = {
     threshold: 0.2
@@ -27,22 +27,24 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Add form submission handling
+// form submission handling
 const contactForm = document.querySelector('#contact-form');
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const formData = new FormData(this);
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'send-email.php');
+    xhr.open('POST', 'send-email.php', true);
     xhr.onload = function() {
         if (xhr.status === 200) {
-            window.location.href = "thank-you.html";
+            // Redirect to the correct portfolio page
+            window.location.href = "index.html";
         } else {
             alert('An error occurred. Please try again later.');
         }
     };
     xhr.send(formData);
 });
+
 
 // tsParticles configuration
 particlesJS('particles-js', {
