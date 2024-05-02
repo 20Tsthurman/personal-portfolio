@@ -3,9 +3,7 @@ document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-            behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -26,25 +24,6 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
     observer.observe(section);
 });
-
-// form submission handling
-const contactForm = document.querySelector('#contact-form');
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'send-email.php', true);
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            // Redirect to the correct portfolio page
-            window.location.href = "index.html";
-        } else {
-            alert('An error occurred. Please try again later.');
-        }
-    };
-    xhr.send(formData);
-});
-
 
 // tsParticles configuration
 particlesJS('particles-js', {
